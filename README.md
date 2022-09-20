@@ -42,8 +42,12 @@ let trx = await client.transaksi(refId, kodeProduk, tujuan, serverId);
 
 ### Cek Status Transaksi
 ```js
-Coming Soon
+let cekStatus = await client.cekStatusTransaksi(refId);
 ```
+
+> Note:
+> RefID adalah kode transaksi unik kamu yang di generate secara acak
+
 
 ### License
 
