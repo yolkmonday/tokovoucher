@@ -31,36 +31,16 @@ const client = new tokovoucher("YOUR MERCHANT ID","YOUR SECRET");
 let saldo = await client.cekSaldo();
 ```
 
-### Cek Akun Game
-```js
-Coming Soon
-```
-
-### Cek Status Koneksi
-```js
-Coming Soon
-```
-
 ### Transaksi
 
 ```js
-Coming Soon
+let trx = await client.transaksi(refId, kodeProduk, tujuan, serverId);
 ```
 
-<!-- > Note:
-> RefID adalah kode transaksi unik kamu yang di generate secara acak -->
+> Note:
+> RefID adalah kode transaksi unik kamu yang di generate secara acak
 
 ### Cek Status Transaksi
-```js
-Coming Soon
-```
-
-### Radeem Kiosgamer Garena Shell Bulk
-```js
-Coming Soon
-```
-
-### Cek Status Radeem Kiosgamer Garena Shell Bulk
 ```js
 Coming Soon
 ```
