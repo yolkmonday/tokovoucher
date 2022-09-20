@@ -1,4 +1,6 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/aripadrian/tokovoucher/badge)](https://www.codefactor.io/repository/github/aripadrian/tokovoucher)
+[![Npm package monthly downloads](https://badgen.net/npm/dm/apigames)](https://npmjs.ccom/package/apigames)
+
 # Tokovoucher Client for Node Js
 
 This library is the abstraction of tokovoucher API for access from applications written with server-side Javascript.
