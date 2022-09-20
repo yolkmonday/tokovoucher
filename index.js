@@ -73,6 +73,34 @@ class Tokovoucher {
         throw Error(err);
       });
   }
+
+  /**
+   * @param {string} refId - RefId Unik Anda
+   * 
+   **/
+  cekStatusTransaksi(refId) {
+    let signature = crypto
+      .createHash('md5')
+      .update(`${this._merchant}:${this._secret}:${refId}`)
+      .digest('hex')
+    const options = {
+      method: "POST",
+      uri: `${this._endpoint}/v1/transaksi/status`,
+      body: {
+        "ref_id": refId,
+        "member_code": this._merchant,
+        "signature": signature
+      },
+      json: true,
+    };
+    return rp(options)
+      .then(function (resp) {
+        return resp
+      })
+      .catch(function (err) {
+        throw Error(err);
+      });
+  }
 }
 
 module.exports = Tokovoucher;
