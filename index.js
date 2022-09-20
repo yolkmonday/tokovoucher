@@ -48,10 +48,10 @@ class Tokovoucher {
    * 
    **/
   transaksi(refId, kodeProduk, tujuan, serverId) {
-    let signature = crypto
-      .createHash('md5')
-      .update(`${this._merchant}:${this._secret}:${refId}`)
-      .digest('hex')
+    // let signature = crypto
+    //   .createHash('md5')
+    //   .update(`${this._merchant}:${this._secret}:${refId}`)
+    //   .digest('hex')
     const options = {
       method: "POST",
       uri: `${this._endpoint}/v1/transaksi`,
