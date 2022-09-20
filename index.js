@@ -25,7 +25,6 @@ class Tokovoucher {
     };
     return rp(options)
       .then(function (resp) {
-
         if (resp.data) {
           if (typeof resp.data.saldo !== undefined) {
             return resp.data.saldo;
@@ -33,6 +32,42 @@ class Tokovoucher {
             throw Error(resp.data.error_msg);
           }
         }
+      })
+      .catch(function (err) {
+        throw Error(err);
+      });
+  }
+
+
+
+  /**
+   * @param {string} refId - RefId Unik Anda
+   * @param {string} kodeProduk - Kode Produk
+   * @param {string} tujuan - Tujuan Pengisian
+   * @param {string} serverId - Server ID
+   * 
+   **/
+  transaksi(refId, kodeProduk, tujuan, serverId) {
+    let signature = crypto
+      .createHash('md5')
+      .update(`${this._merchant}:${this._secret}:${refId}`)
+      .digest('hex')
+    const options = {
+      method: "POST",
+      uri: `${this._endpoint}/v1/transaksi`,
+      body: {
+        "ref_id": refId,
+        "produk": kodeProduk,
+        "tujuan": tujuan,
+        "server_id": serverId || "",
+        "member_code": this._merchant,
+        "secret": this._secret
+      },
+      json: true,
+    };
+    return rp(options)
+      .then(function (resp) {
+        return resp
       })
       .catch(function (err) {
         throw Error(err);
