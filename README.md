@@ -1,31 +1,30 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/aripadrian/apigames/badge)](https://www.codefactor.io/repository/github/aripadrian/apigames)
-# Apigames Client for Node Js
+[![CodeFactor](https://www.codefactor.io/repository/github/aripadrian/tokovoucher/badge)](https://www.codefactor.io/repository/github/aripadrian/tokovoucher)
+# Tokovoucher Client for Node Js
 
-This library is the abstraction of Apigames API for access from applications written with server-side Javascript.
+This library is the abstraction of tokovoucher API for access from applications written with server-side Javascript.
 
-[![NPM](https://nodei.co/npm/apigames.png)](https://nodei.co/npm/apigames/)
+[![NPM](https://nodei.co/npm/tokovoucher.png)](https://nodei.co/npm/tokovoucher/)
 
 
 ## Instalasi
 
 ```bash
-npm install apigames
+npm install tokovoucher
 ```
 
 atau
 
 ```bash
-yarn add apigames
+yarn add tokovoucher
 ```
 
 ## Pemakaian
-Dapatkan Merchant ID dan Secret Key Anda di [Apigames Dashboard](https://member.apigames.id/pengaturan/secret-key).
+Dapatkan Merchant ID dan Secret Key Anda di [Tokovoucher Dashboard](https://member.tokovoucher.id/pengaturan/secret-key).
 
 ```js
-const Apigames = require('apigames');
-const client = new Apigames("YOUR MERCHANT ID","YOUR SECRET");
+const tokovoucher = require('tokovoucher');
+const client = new tokovoucher("YOUR MERCHANT ID","YOUR SECRET");
 ```
-
 
 ### Cek Saldo
 ```js
@@ -45,11 +44,11 @@ Coming Soon
 ### Transaksi
 
 ```js
-let transaksi = await client.transaksi(productCode, tujuan, refId);
+Coming Soon
 ```
 
-> Note:
-> RefID adalah kode transaksi unik kamu yang di generate secara acak
+<!-- > Note:
+> RefID adalah kode transaksi unik kamu yang di generate secara acak -->
 
 ### Cek Status Transaksi
 ```js
@@ -68,7 +67,7 @@ Coming Soon
 
 ### License
 
-[MIT](https://github.com/aripadrian/apigames/blob/master/LICENSE)
+[MIT](https://github.com/aripadrian/tokovoucher/blob/master/LICENSE)
 
 ### Author
 
