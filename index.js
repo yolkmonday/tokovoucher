@@ -101,6 +101,93 @@ class Tokovoucher {
         throw Error(err);
       });
   }
+
+  /**
+   **/
+  listKategori() {
+    let signature = crypto
+      .createHash('md5')
+      .update(`${this._merchant}:${this._secret}`)
+      .digest('hex')
+    const options = {
+      method: "GET",
+      uri: `${this._endpoint}/member/produk/category/list?member_code=${this._merchant}&signature=${signature}`,
+    };
+    return rp(options)
+      .then(function (resp) {
+        return resp
+      })
+      .catch(function (err) {
+        throw Error(err);
+      });
+  }
+
+
+  /**
+   *  @param {string} categoryId - Kategori ID yang dipilih
+   **/
+  listOperatorByKategori(categoryId) {
+    let signature = crypto
+      .createHash('md5')
+      .update(`${this._merchant}:${this._secret}`)
+      .digest('hex')
+    const options = {
+      method: "GET",
+      uri: `${this._endpoint}/member/produk/operator/list?member_code=${this._merchant}&signature=${signature}&id=${categoryId}`,
+    };
+    return rp(options)
+      .then(function (resp) {
+        return resp
+      })
+      .catch(function (err) {
+        throw Error(err);
+      });
+  }
+
+  /**
+   *  @param {string} operatorId - Kategori ID yang dipilih
+   **/
+  listJenisByOperator(operatorId) {
+    let signature = crypto
+      .createHash('md5')
+      .update(`${this._merchant}:${this._secret}`)
+      .digest('hex')
+    const options = {
+      method: "GET",
+      uri: `${this._endpoint}/member/produk/jenis/list?member_code=${this._merchant}&signature=${signature}&id=${operatorId}`,
+    };
+    return rp(options)
+      .then(function (resp) {
+        return resp
+      })
+      .catch(function (err) {
+        throw Error(err);
+      });
+  }
+
+  /**
+   *  @param {string} operatorId - Kategori ID yang dipilih
+   **/
+  listProduk(operatorId, jenisId) {
+    let signature = crypto
+      .createHash('md5')
+      .update(`${this._merchant}:${this._secret}`)
+      .digest('hex')
+    const options = {
+      method: "GET",
+      uri: `${this._endpoint}/member/produk/list?member_code=${this._merchant}&signature=${signature}&id_op=${operatorId}&id_jenis=${jenisId}`,
+    };
+    return rp(options)
+      .then(function (resp) {
+        return resp
+      })
+      .catch(function (err) {
+        throw Error(err);
+      });
+  }
+
+
+
 }
 
 module.exports = Tokovoucher;

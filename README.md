@@ -51,6 +51,26 @@ let cekStatus = await client.cekStatusTransaksi(refId);
 > RefID adalah kode transaksi unik kamu yang di generate secara acak
 
 
+### List Kategori
+```js
+let kategori = await client.listKategori();
+```
+
+### List Operator
+```js
+let operator = await client.listOperatorByKategori(id_kategori);
+```
+
+### List Jenis
+```js
+let jenis = await client.listJenisByOperator(id_operator);
+```
+
+### List Produk
+```js
+let produk = await client.listProduk(id_operator, id_jenis);
+```
+
 ### License
 
 [MIT](https://github.com/aripadrian/tokovoucher/blob/master/LICENSE)
