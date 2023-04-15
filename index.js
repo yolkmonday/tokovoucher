@@ -61,7 +61,7 @@ class Tokovoucher {
         "tujuan": tujuan,
         "server_id": serverId || "",
         "member_code": this._merchant,
-        "secret": this._secret
+        "signature": this._secret
       },
       json: true,
     };
