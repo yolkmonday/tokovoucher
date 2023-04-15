@@ -1,6 +1,6 @@
 {
   "name": "tokovoucher",
-  "version": "1.0.3-beta",
+  "version": "1.0.4",
   "description": "Unofficial tokovoucher client library for Node Js ",
   "main": "index.js",
   "scripts": {
