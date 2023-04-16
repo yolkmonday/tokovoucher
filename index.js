@@ -200,7 +200,12 @@ class Tokovoucher {
     };
     return rp(options)
       .then(function (resp) {
-        return resp
+        const dt = JSON.parse(resp)
+        if (dt.status) {
+          return dt.data[0]
+        } else {
+          return "not found"
+        }
       })
       .catch(function (err) {
         throw Error(err);
