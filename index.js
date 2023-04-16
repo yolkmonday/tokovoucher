@@ -186,6 +186,27 @@ class Tokovoucher {
       });
   }
 
+  /**
+   *  @param {string} productCode - Kategori ID yang dipilih
+   **/
+  getProduk(productCode) {
+    let signature = crypto
+      .createHash('md5')
+      .update(`${this._merchant}:${this._secret}`)
+      .digest('hex')
+    const options = {
+      method: "GET",
+      uri: `${this._endpoint}/produk/code?member_code=${this._merchant}&signature=${signature}&kode=${productCode}`,
+    };
+    return rp(options)
+      .then(function (resp) {
+        return resp
+      })
+      .catch(function (err) {
+        throw Error(err);
+      });
+  }
+
 
 
 }
