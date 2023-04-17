@@ -1,4 +1,4 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/aripadrian/tokovoucher/badge)](https://www.codefactor.io/repository/github/aripadrian/tokovoucher)
+[![CodeFactor](https://www.codefactor.io/repository/github/aripadrian/tokovoucher/badge)](https://www.codefactor.io/repository/github/yolkmonday/tokovoucher)
 [![Npm package monthly downloads](https://badgen.net/npm/dm/tokovoucher)](https://npmjs.com/package/tokovoucher)
 
 # Tokovoucher Client for Node Js
